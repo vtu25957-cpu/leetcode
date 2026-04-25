@@ -22,18 +22,18 @@ class Solution {
         int rows = grid.length;
         int cols = grid[0].length;
         
-        // Base case: check boundaries and if it's water
+        // Check boundaries and if the cell is water
         if (r < 0 || c < 0 || r >= rows || c >= cols || grid[r][c] == '0') {
             return;
         }
         
-        // "Sink" the land to mark it as visited
+        // Mark as visited by setting to '0'
         grid[r][c] = '0';
         
-        // Explore all 4 directions
-        dfs(grid, r - 1, c); // up
-        dfs(grid, r + 1, c); // down
-        dfs(grid, r, c - 1); // left
-        dfs(grid, r, c + 1); // right
+        // Visit all 4 neighbors
+        dfs(grid, r - 1, c); // Up
+        dfs(grid, r + 1, c); // Down
+        dfs(grid, r, c - 1); // Left
+        dfs(grid, r, c + 1); // Right
     }
 }
